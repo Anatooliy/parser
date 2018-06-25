@@ -1,0 +1,29 @@
+﻿
+@{
+                /**/
+
+                /**/
+
+                ViewBag.Title = "Parse";
+}
+
+<h2></h2>
+
+@using (Html.BeginForm("ParseStart", "Home", FormMethod.Post, new { @role = "form" }))
+{
+    @*<p>@Html.Label("start", "Номер первой страницы")</p>
+        @Html.TextBox("start")
+        <p>@Html.Label("end", "Номер последней страницы")</p>
+        @Html.TextBox("end")
+        <p><input type="submit" value="Получить товары" /></p>*@
+    
+    <div class="form-group">
+        <label for="start">Номер первой страницы</label>
+        <input type="number" required class="form-control" name="start" id="start" placeholder="Номер первой страницы">        
+    </div>
+    <div class="form-group">
+        <label for="end">Номер последней страницы</label>
+        <input type="number" required class="form-control" name="end" id="end" placeholder="Номер последней страницы">
+    </div>    
+    <button type="submit" class="btn btn-success">Получить товары</button>
+}

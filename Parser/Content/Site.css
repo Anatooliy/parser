@@ -1,0 +1,95 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* list */
+.item-block {
+    padding: 8px 0;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
+
+.item-block .item-img {
+    text-align: center;
+    min-height: 190px;
+}
+
+.item-block .item-img img{
+    max-height: 180px;
+}
+
+.item-block div {
+    line-height: 15px;
+    padding: 5px 15px;
+    font-size: 13px;
+}
+
+.item-block .item-name {
+    height: 50px;
+    overflow: hidden;
+}
+
+.item-block .item-label {
+    font-weight: 600;
+}
+
+.item-block .item-author,
+.item-block .item-price{
+    margin-top: 5px;
+}
+
+.item-block .item-author{
+    height: 35px;
+    overflow: hidden;
+}
+
+/* detail */
+.detail-block{
+    margin: 25px 0;
+}
+
+.detail-block .detail-item{
+    margin-bottom: 10px;
+} 
+
+.detail-block .detail-label {
+    font-weight: 600;
+}
+
+@media (max-width: 568px)
+{
+    .col-12{
+        width: 100%;
+    }
+
+    .detail-img{
+        text-align: center;
+        margin-bottom: 10px
+    }
+}
+
+/* form */
+.parse-form .btn-success{
+
+}

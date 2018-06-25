@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Parser.Models.Product>
+@using Parser.Helpers
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Каталог</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 col-sm-4 col-xs-6 item-block">
+            <div class="item-img">
+                @Html.Image("/Images/Catalog/" + item.ImgName, item.Name)
+            </div>
+            <div class="item-name">
+                <span>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </span>
+            </div>
+            <div class="item-author">
+                <span class="item-author-label item-label">
+                    @Html.DisplayNameFor(model => model.Author):
+
+                </span>
+                <span class="item-author-value">
+                    @Html.DisplayFor(modelItem => item.Author)
+                </span>
+            </div>
+            <div class="item-price">
+                <span class="item-author-label item-label">
+                    @Html.DisplayNameFor(model => model.Price):
+                </span>
+                <span class="item-price-value">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </span>
+            </div>
+            <div class="item-price">
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Id })
+            </div>
+        </div>
+    }
+</div>
