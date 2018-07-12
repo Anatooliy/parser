@@ -1,5 +1,7 @@
-﻿@model IEnumerable<Parser.Models.Product>
+﻿@model PagedList.IPagedList<Parser.Models.Product>
+
 @using Parser.Helpers
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -21,7 +23,7 @@
             </div>
             <div class="item-author">
                 <span class="item-author-label item-label">
-                    @Html.DisplayNameFor(model => model.Author):
+                    @Html.DisplayNameFor(model => item.Author):
 
                 </span>
                 <span class="item-author-value">
@@ -30,7 +32,7 @@
             </div>
             <div class="item-price">
                 <span class="item-author-label item-label">
-                    @Html.DisplayNameFor(model => model.Price):
+                    @Html.DisplayNameFor(model => item.Price):
                 </span>
                 <span class="item-price-value">
                     @Html.DisplayFor(modelItem => item.Price)
@@ -40,5 +42,17 @@
                 @Html.ActionLink("Подробнее", "Details", new { id = item.Id })
             </div>
         </div>
-    }
+    }   
+</div>
+<div class="row">
+    <div class="container">
+        <div class="col-md-12 offset-md-6">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+            new PagedListRenderOptions() {
+                Display = PagedListDisplayMode.IfNeeded ,
+                //DisplayPageCountAndCurrentLocation = true,
+                MaximumPageNumbersToDisplay = 3
+            })
+        </div>
+    </div>
 </div>

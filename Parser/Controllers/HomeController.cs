@@ -10,6 +10,8 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using PagedList.Mvc;
+using PagedList;
 
 namespace Parser.Controllers
 {
@@ -17,9 +19,11 @@ namespace Parser.Controllers
     {
         ParserContext db = new ParserContext();
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int? page, int pageSize = 8)
         {
-            return View(await db.Products.ToListAsync());
+            int pageNumber = (page ?? 1);
+            List<Product> products = await db.Products.ToListAsync();
+            return View(products.ToPagedList(pageNumber, pageSize));
         }
 
 
