@@ -19,7 +19,7 @@ namespace Parser.Controllers
     {
         ParserContext db = new ParserContext();
 
-        public async Task<ActionResult> Index(int? page, int pageSize = 8)
+        public async Task<ActionResult> Index(int? page, int pageSize = 12)
         {
             int pageNumber = (page ?? 1);
             List<Product> products = await db.Products.ToListAsync();

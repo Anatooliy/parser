@@ -93,3 +93,15 @@ textarea {
 .parse-form .btn-success{
 
 }
+
+
+/* pagination */
+.pagination-container{
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .pagination-container .disabled.PagedList-ellipses {
+        display: none;
+    }
+}
